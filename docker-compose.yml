@@ -33,3 +33,15 @@ services:
       - /var/lib/postgresql/data
     ports:
       - 5432:5432
+  webpack:
+    build: ./src/app/views/
+    container_name: client-side
+    working_dir: /home/node/app/
+    volumes: 
+      - ./src/app/views/:/home/node/app/
+    ports:
+      - 3001:3001
+    links:
+      - node
+    expose:
+      - "3001"
