@@ -1,0 +1,35 @@
+version: "3"
+services:
+  node:
+    container_name: server-side
+    build: .
+    working_dir: /app/
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=todolist
+      - POSTGRES_PORT=5432 
+    expose:
+      - "3000"
+    volumes: 
+      - .:/app/
+    ports:
+      - 3000:3000
+    links:
+      - db
+  db:
+    build: 
+      context: .
+      dockerfile: ./docker/db/Dockerfile
+    container_name: db
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=todolist
+      - POSTGRES_PORT=5432
+    volumes:
+      - /var/lib/postgresql/data
+    ports:
+      - 5432:5432
