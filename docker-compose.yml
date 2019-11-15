@@ -32,14 +32,16 @@ services:
     ports:
       - 5432:5432
   webpack:
-    build: ./src/app/views/
+    image: matheusfaggi/todolist_webpack
     container_name: client-side
-    working_dir: /home/node/app/
+    working_dir: /usr/src/app/
     volumes: 
-      - ./src/app/views/:/home/node/app/
+      - ./src/app/views/:./usr/src/app/
     ports:
-      - 3001:3001
+      - 8080:3001
     links:
       - node
     expose:
       - "3001"
+    command:
+    - webpack-init.sh
