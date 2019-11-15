@@ -7,7 +7,7 @@ const routes = new Router();
 
 routes.post('/users', UserController.store);
 
-routes.get('/task', TaskController.show);
+routes.get('/tasks', TaskController.show);
 routes.post('/task', TaskController.store);
 routes.delete('/task', TaskController.delete);
 routes.put('/task', TaskController.alter);
