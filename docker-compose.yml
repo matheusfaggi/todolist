@@ -2,7 +2,7 @@ version: "3"
 services:
   node:
     container_name: server-side
-    build: .
+    image: matheusfaggi/todolist_node
     working_dir: /app/
     environment:
       - NODE_ENV=production
@@ -20,9 +20,7 @@ services:
     links:
       - db
   db:
-    build: 
-      context: .
-      dockerfile: ./docker/db/Dockerfile
+    image: matheusfaggi/todolist_db
     container_name: db
     environment:
       - POSTGRES_USER=docker
