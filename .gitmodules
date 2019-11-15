@@ -1,3 +1,6 @@
 [submodule "src/app/views"]
 	path = src/app/views
 	url = https://github.com/matheusfaggi/todolist_client-side
+[submodule "todolist_client-side"]
+	path = todolist_client-side
+	url = https://github.com/matheusfaggi/todolist_client-side
