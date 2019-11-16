@@ -33,6 +33,14 @@ Criar uma lista de tarefas, com CRUD completo.
 #### Passo a passo
 Entre na pasta do projeto e digite os seguinte comandos
 
+## Novo Método
+
+/scripts/up.bat
+/scripts/restart.bat
+/scripts/down.bat
+
+riscar aqui essa parte de baixo dps \/
+
 Para criação dos containers responsáveis por sustentar a aplicação.
 ```
 docker-compose up -d --build
