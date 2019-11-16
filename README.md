@@ -68,7 +68,8 @@ Afim de esclarecer qual a finalidade de cada rota, segue o glossário das rotas 
 
 Considerações finais
 ---
-No decorrer do desenvolvimento do projeto, aprendi muito sobre Docker, como manipula-lo e configurar um ambiente de desenvolvimento containerizado. Ademais conheci de perto um ORM (Sequelize), que fez com que a qualidade do meu código melhorasse consideravelmente. 
+No decorrer do desenvolvimento do projeto, aprendi muito sobre Docker, como manipula-lo e configurar um ambiente de desenvolvimento containerizado. Ademais conheci de perto um ORM (Sequelize), que fez com que a qualidade do meu código melhorasse consideravelmente.
+
 O projeto ainda não está concluído e acredito que tenho muito a aprender com ele.
 
 
