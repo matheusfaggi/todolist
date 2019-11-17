@@ -5,6 +5,10 @@ import TaskController from './app/controllers/TaskController';
 
 const routes = new Router();
 
+routes.get('/', (req, res, next) => {
+  res.json({ message: 'Hello World' });
+});
+
 routes.post('/users', UserController.store);
 
 routes.get('/tasks', TaskController.show);

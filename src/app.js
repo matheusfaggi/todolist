@@ -1,4 +1,5 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import routes from './routes';
 
 import './database';
@@ -12,14 +13,16 @@ class App {
   }
 
   middleware() {
-    this.server.use((req, res, next) => {
-      res.header('Access-Control-Allow-Origin', '*');
-      res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-      res.header('Access-Control-Allow-Headers', 'Content-Type');
-      console.log('passou aqui');
+    this.server.use(express.json(), bodyParser.json(), (req, res, next) => {
+      const origin = req.get('origin');
+      console.log(req.url);
+      console.log(req.body);
+      res.header('Access-Control-Allow-Origin', origin);
+      res.header('Access-Control-Allow-Credentials', true);
+      res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization, Cache-Control, Pragma');
       next();
     });
-    this.server.use(express.json());
   }
 
   routes() {

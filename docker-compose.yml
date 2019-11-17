@@ -10,7 +10,7 @@ services:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker
       - POSTGRES_DB=todolist
-      - POSTGRES_PORT=5432 
+      - POSTGRES_PORT=5432
     expose:
       - "3000"
     volumes: 
@@ -41,3 +41,4 @@ services:
       - 8080:8080
     links:
       - node
+ 
