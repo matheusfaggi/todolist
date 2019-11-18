@@ -31,15 +31,19 @@ Criar uma lista de tarefas, com CRUD completo.
 - Docker instalado no computador
 
 #### Passo a passo
-Entre na pasta do projeto e digite os seguinte comandos
+Clone o repositório utilizando a função recursiva, para seja feita a copia de todos os submodules da aplicação.
+```
+git clone --recursive -j8 https://github.com/matheusfaggi/todolist
+```
 
 ## Novo Método
 
 /scripts/up.bat
 /scripts/restart.bat
 /scripts/down.bat
+/scripts/migrations.bat
 
-riscar aqui essa parte de baixo dps \/
+~~~
 
 Para criação dos containers responsáveis por sustentar a aplicação.
 ```
@@ -58,6 +62,7 @@ root@<idcontainer>:/app# yarn sequelize db:migrate
 ```
 Ao final, a API ficará disponível em [localhost:3000](localhost:3000).
 
+~~~
 #### Rotas
 Afim de esclarecer qual a finalidade de cada rota, segue o glossário das rotas disponíveis até então.
 
