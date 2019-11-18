@@ -38,7 +38,7 @@ git clone --recursive -j8 https://github.com/matheusfaggi/todolist
 Depois é só executar os arquivos de acordo com a função que você deseja executar.
 Não esquecer de realizar a migration para que a API funcione.
 
-## Arquivos .bat
+##### Arquivos .bat
 
 * /scripts/up.bat
 * /scripts/restart.bat
