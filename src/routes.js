@@ -1,15 +1,19 @@
-import Router from 'express';
+import Router from 'express'
 
-import UserController from './app/controllers/UserController';
-import TaskController from './app/controllers/TaskController';
+import UserController from './app/controllers/UserController'
+import TaskController from './app/controllers/TaskController'
 
-const routes = new Router();
+const routes = new Router()
 
-routes.post('/users', UserController.store);
+routes.get('/', (req, res, next) => {
+    res.json({ message: 'Hello World' })
+})
 
-routes.get('/tasks', TaskController.show);
-routes.post('/task', TaskController.store);
-routes.delete('/task', TaskController.delete);
-routes.put('/task', TaskController.alter);
+routes.post('/users', UserController.store)
 
-export default routes;
+routes.get('/tasks', TaskController.show)
+routes.post('/task', TaskController.store)
+routes.delete('/task', TaskController.delete)
+routes.put('/task', TaskController.alter)
+
+export default routes
