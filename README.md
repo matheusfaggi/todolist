@@ -33,7 +33,7 @@ Criar uma lista de tarefas, com CRUD completo.
 #### Passo a passo
 Clone o repositório utilizando a função recursiva, para seja feita a copia de todos os submodules da aplicação.
 ```
-git clone --recursive -j8 https://github.com/matheusfaggi/todolist
+git clone --recursive -j8 https://github.com/matheusfaggi/todolist && cd todolist && yarn && cd src/app/views && yarn
 ```
 Depois é só executar os arquivos de acordo com a função que você deseja executar.
 Não esquecer de realizar a migration para que a API funcione.
