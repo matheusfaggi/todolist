@@ -35,34 +35,16 @@ Clone o repositório utilizando a função recursiva, para seja feita a copia de
 ```
 git clone --recursive -j8 https://github.com/matheusfaggi/todolist
 ```
+Depois é só executar os arquivos de acordo com a função que você deseja executar.
+Não esquecer de realizar a migration para que a API funcione.
 
-## Novo Método
+## Arquivos .bat
 
-/scripts/up.bat
-/scripts/restart.bat
-/scripts/down.bat
-/scripts/migrations.bat
+* /scripts/up.bat
+* /scripts/restart.bat
+* /scripts/down.bat
+* /scripts/migrations.bat
 
-~~~
-
-Para criação dos containers responsáveis por sustentar a aplicação.
-```
-docker-compose up -d --build
-```
-
-Para entrar no container onde a API está alocada.
-```
-docker exec -it <id container todolist_node> bash
-```
-
-Ao entrar no container, o workdir está setado na pasta da aplicação. Sendo assim, é necessário somente executar  o próximo comando para que a migration seja executada e os bancos/tabelas sejam devidamente criadas(os).
-```
-root@<idcontainer>:/app#
-root@<idcontainer>:/app# yarn sequelize db:migrate
-```
-Ao final, a API ficará disponível em [localhost:3000](localhost:3000).
-
-~~~
 #### Rotas
 Afim de esclarecer qual a finalidade de cada rota, segue o glossário das rotas disponíveis até então.
 
