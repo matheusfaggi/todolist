@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     es6: true,
-    node: true
+    re
   },
   extends: ["airbnb-base"],
   globals: {
@@ -18,5 +18,11 @@ module.exports = {
     "no-param-reassign": "off",
     camelcase: "off",
     "no-unused-vars": ["error", { argsIgnorePattern: "next" }]
-  }
+  },
+  parser: "babel-eslint",
+  plugins: [
+    'react',
+    'jsx-ally',
+    'import'
+  ]
 };
