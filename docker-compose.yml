@@ -1,44 +1,43 @@
-version: "3"
+version: '3'
 services:
-  node:
-    container_name: server-side
-    image: matheusfaggi/todolist_node
-    working_dir: /app/
-    environment:
-      - NODE_ENV=production
-      - PORT=3000
-      - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=docker
-      - POSTGRES_DB=todolist
-      - POSTGRES_PORT=5432
-    expose:
-      - "3000"
-    volumes: 
-      - .:/app/
-    ports:
-      - 3000:3000
-    links:
-      - db
-  db:
-    image: matheusfaggi/todolist_db
-    container_name: db
-    environment:
-      - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=docker
-      - POSTGRES_DB=todolist
-      - POSTGRES_PORT=5432
-    volumes:
-      - /var/lib/postgresql/data
-    ports:
-      - 5432:5432
-  webpack:
-    image: matheusfaggi/todolist_webpack
-    container_name: client-side
-    working_dir: /app/
-    volumes: 
-      - ./src/app/views:/app/
-    ports:
-      - 8080:8080
-    links:
-      - node
- 
+    node:
+        container_name: server-side
+        build: .
+        working_dir: /app/
+        environment:
+            - NODE_ENV=production
+            - PORT=3000
+            - POSTGRES_USER=docker
+            - POSTGRES_PASSWORD=docker
+            - POSTGRES_DB=todolist
+            - POSTGRES_PORT=5432
+        expose:
+            - '3000'
+        volumes:
+            - .:/app/
+        ports:
+            - 3000:3000
+        links:
+            - db
+    db:
+        image: postgres
+        container_name: db
+        environment:
+            - POSTGRES_USER=docker
+            - POSTGRES_PASSWORD=docker
+            - POSTGRES_DB=todolist
+            - POSTGRES_PORT=5432
+        volumes:
+            - /var/lib/postgresql/data
+        ports:
+            - 5432:5432
+    webpack:
+        build: ./src/app/views/
+        container_name: client-side
+        working_dir: /app/
+        volumes:
+            - ./src/app/views:/app/
+        ports:
+            - 8080:8080
+        links:
+            - node
