@@ -15,7 +15,7 @@
     "start": "node ./src/server.js"
   },
   "devDependencies": {
-    "eslint": "^6.6.0",
+    "eslint": "^9.39.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "nodemon": "^1.19.4",
